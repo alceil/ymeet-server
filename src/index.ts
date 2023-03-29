@@ -18,6 +18,9 @@ const server = http.createServer(app);
 const PORT = process.env.PORT || 5000;
 
 
+// POST request body json parser
+app.use(express.json());
+
 app.get("/", (_req,res) => {
   res.send("Server is up and running");
 });
