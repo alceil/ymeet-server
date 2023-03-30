@@ -17,4 +17,4 @@ const schema = new Schema<UserType>(
   }
 );
 
-export const User = model<UserType>("User", schema);
+export const User = model<UserType>("YmeetUsers", schema);
