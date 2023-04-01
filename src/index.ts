@@ -20,13 +20,13 @@ const app = express();
 const server = http.createServer(app);
 const PORT = process.env.PORT || 5000;
 
+// cors
+app.use(cors());
 
 // POST request body json parser
 app.use(express.json());
 // routes for REST API
 app.use(Routes);
-// cors
-app.use(cors());
 
 app.get("/", (_req,res) => {
   res.send("Server is up and running");
