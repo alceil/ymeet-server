@@ -1,12 +1,13 @@
 import { Schema, model } from "mongoose";
 import { ChatType } from "./chat";
+import { UserType } from "./user";
 
 export type MeetType = {
   _id?: string;
   title: string;
   type: "public" | "private";
   time: string;
-  hostID: string;
+  hostID: string | UserType;
   meetID: string;
   invitees: string[];
   chat: ChatType[];
