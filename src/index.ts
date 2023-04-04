@@ -1,6 +1,9 @@
 import express from "express";
 import http from "http";
 import cors from "cors";
+import { ExpressPeerServer } from "peer";
+import { Chat, Meet } from "./models";
+import { Server } from "socket.io";
 import mongoose, { ConnectOptions } from "mongoose";
 import Routes from "./routes";
 require('dotenv').config()
@@ -18,6 +21,7 @@ mongoose.connect(MONGO_URI??"", {
 
 const app = express();
 const server = http.createServer(app);
+const peerServer = ExpressPeerServer(server, {});
 const PORT = process.env.PORT || 5000;
 
 // cors

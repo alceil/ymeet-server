@@ -1,15 +1,15 @@
 import nodemailer, { SendMailOptions, SentMessageInfo } from "nodemailer";
-import chalk from "chalk";
+// import chalk from "chalk";
 
 export const sendMail = async (
   options: SendMailOptions = {}
 ): Promise<SentMessageInfo> => {
   const testAccount = await nodemailer.createTestAccount();
-  console.log(
-    process.env.EMAIL_SERVER
-      ? chalk.red.bold("Using production email service")
-      : chalk.green.bold("Using development email service")
-  );
+  // console.log(
+  //   process.env.EMAIL_SERVER
+  //     ? chalk.red.bold("Using production email service")
+  //     : chalk.green.bold("Using development email service")
+  // );
 
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_SERVER || "smtp.ethereal.email",
